@@ -16,19 +16,19 @@ def add_task():
         tasks.append(task)
     return redirect(url_for('index'))
 
-@app.route('/delete/<task_id>', methods=['POST'])
-def delete_task(task_id):
+#@app.route('/delete/<task_id>', methods=['POST'])
+#def delete_task(task_id):
     # Ensure task deletion logic is correct
-    tasks = [task for task in tasks if task.id != int(task_id)]
-    return redirect('/')
+    #tasks = [task for task in tasks if task.id != int(task_id)]
+    #return redirect('/')
     
 #response = client.post('/add', data={'task': 'Task to Delete'})
 
-#@app.route('/delete/<int:task_id>')
-#def delete_task(task_id):
-    #if 0 <= task_id < len(tasks):
-        #tasks.pop(task_id)
-    #return redirect(url_for('index'))
+@app.route('/delete/<int:task_id>')
+def delete_task(task_id):
+    if 0 <= task_id < len(tasks):
+        tasks.pop(task_id)
+    return redirect(url_for('index'))
 
 if __name__ == '__main__':
     app.run(debug=True)
