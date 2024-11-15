@@ -16,7 +16,7 @@ pipeline {
                 sh '''
                     #!/bin/bash
                     python3 -m venv venv
-                    pip install pytest
+                    sudo pip install pytest
                 '''
             }
         }
