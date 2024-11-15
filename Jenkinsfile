@@ -11,9 +11,21 @@ pipeline {
                 sh 'docker build -t my-app:${BUILD_NUMBER} .'
             }
         }
+        stage('Setup Environment') {
+            steps {
+                sh '''
+                    python3 -m venv venv
+                    source venv/bin/activate
+                    pip install pytest
+                '''
+            }
+        }
         stage('Test') {
             steps {
-                sh 'pytest tests/'  // Replace with your test command
+                sh '''
+                    source venv/bin/activate
+                    pytest tests/
+                '''  // Replace with your test command
             }
         }
         stage('Deploy to Development') {
