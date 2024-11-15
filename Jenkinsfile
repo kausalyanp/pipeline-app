@@ -16,7 +16,6 @@ pipeline {
                 sh '''
                     #!/bin/bash
                     python3 -m venv venv
-                    source venv/bin/activate
                     pip install pytest
                 '''
             }
@@ -25,7 +24,6 @@ pipeline {
             steps {
                 sh '''
                     #!/bin/bash
-                    source venv/bin/activate
                     pytest tests/
                 '''  // Replace with your test command
             }
