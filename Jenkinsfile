@@ -14,6 +14,7 @@ pipeline {
         stage('Setup Environment') {
             steps {
                 sh '''
+                    #!/bin/bash
                     python3 -m venv venv
                     source venv/bin/activate
                     pip install pytest
@@ -23,6 +24,7 @@ pipeline {
         stage('Test') {
             steps {
                 sh '''
+                    #!/bin/bash
                     source venv/bin/activate
                     pytest tests/
                 '''  // Replace with your test command
