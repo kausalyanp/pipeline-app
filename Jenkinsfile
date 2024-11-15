@@ -16,7 +16,7 @@ pipeline {
                 sh '''
                     #!/bin/bash
                     python3 -m venv venv
-                    sudo pip install pytest
+                    pip install pytest
                 '''
             }
         }
@@ -24,7 +24,7 @@ pipeline {
             steps {
                 sh '''
                     #!/bin/bash
-                    pytest tests/
+                    /var/lib/jenkins/.local/bin/pytest tests/
                 '''  // Replace with your test command
             }
         }
