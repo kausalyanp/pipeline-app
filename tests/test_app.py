@@ -26,10 +26,15 @@ def test_delete_task(client):
     # Add a task first
     client.post('/add', data={'task': 'Task to Delete'})
 
+    # Verify task is present
+    response = client.get('/')
+    assert b'Task to Delete' in response.data
+
     # Delete the task
     response = client.get('/delete/0')
     assert response.status_code == 302  # Redirect to home page
 
     # Verify the task was deleted
     response = client.get('/')
+    print(response.data)
     assert b"Task to Delete" not in response.data
