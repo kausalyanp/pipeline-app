@@ -22,7 +22,7 @@ def delete_task(task_id):
     tasks = [task for task in tasks if task.id != int(task_id)]
     return redirect('/')
     
-response = client.post('/add', data={'task': 'Task to Delete'})
+#response = client.post('/add', data={'task': 'Task to Delete'})
 
 #@app.route('/delete/<int:task_id>')
 #def delete_task(task_id):
