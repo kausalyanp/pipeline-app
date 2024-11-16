@@ -9,7 +9,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'docker build -t my-app:${BUILD_NUMBER} .'
-                sh 'docker run -d my-app:${BUILD_NUMBER}'
+                sh 'docker push my-app:${BUILD_NUMBER}'
             }
         }
         stage('Setup Environment') {
@@ -26,6 +26,7 @@ pipeline {
                 sh '''
                     #!/bin/bash
                     /usr/local/bin/pytest tests/
+                    sh 'docker run -d -p 8080:80 --name my-app-container my-app:${BUILD_NUMBER}'
                 '''  // Replace with your test command
             }
         }
