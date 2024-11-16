@@ -30,5 +30,9 @@ def delete_task(task_id):
         #tasks.pop(task_id)
     #return redirect(url_for('index'))  
 
+import os
+
 if __name__ == '__main__':
-    app.run(debug=True)
+    # Get the port from environment variable, default to 8080 if not set
+    port = int(os.getenv("FLASK_PORT", 8082))
+    app.run(host='0.0.0.0', port=port, debug=True)
