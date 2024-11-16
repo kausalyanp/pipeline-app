@@ -33,6 +33,6 @@ def delete_task(task_id):
 import os
 
 if __name__ == '__main__':
-    # Get the port from environment variable, default to 8080 if not set
-    port = int(os.getenv("FLASK_PORT", 8082))
+    # Get the port from environment variable, default to 5000 if not set
+    port = int(os.getenv("FLASK_PORT", 5000))
     app.run(host='0.0.0.0', port=port, debug=True)
