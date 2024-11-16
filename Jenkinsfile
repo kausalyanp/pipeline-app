@@ -9,7 +9,6 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'docker build -t my-app:${BUILD_NUMBER} .'
-                sh 'docker push my-app:${BUILD_NUMBER}'
             }
         }
         stage('Setup Environment') {
