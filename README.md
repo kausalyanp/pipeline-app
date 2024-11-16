@@ -4,8 +4,8 @@ Creating a basic deployment pipeline involves configuring tools like Git, Jenkin
 1. Prerequisites
    Install Required Tools:
      1. Install Git (By default installed in Ubuntu server)
-     2. Install Jenkins
-     3. Install Docker
+     2. Install Jenkins (Refer file jenk.sh)
+     3. Install Docker  (Refer file dock.sh)
 
    Configure Git Repository:
    ```
