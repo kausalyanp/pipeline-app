@@ -25,7 +25,7 @@ pipeline {
             steps {
                 sh '''
                     #!/bin/bash
-                    /var/lib/jenkins/.local/bin/pytest tests/
+                    /usr/local/bin/pytest tests/
                 '''  // Replace with your test command
             }
         }
