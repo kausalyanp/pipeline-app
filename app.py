@@ -1,6 +1,9 @@
 from flask import Flask, render_template, request, redirect, url_for
 
 app = Flask(__name__)
+    app.run(host="0.0.0.0", port=9090)
+    app.run(host="0.0.0.0", port=8081)
+    app.run(host="0.0.0.0", port=8082)
 
 # Simulated database (in-memory list)
 tasks = []
