@@ -55,9 +55,9 @@ pipeline {
             }
         }
     }
-    post {
-        always {
-            archiveArtifacts artifacts: '**/target/*.war', fingerprint: true
-        }
-    }
+    // post {
+       // always {
+         //   archiveArtifacts artifacts: '**/target/*.war', fingerprint: true
+       // }
+    //} 
 }
