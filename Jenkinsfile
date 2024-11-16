@@ -26,7 +26,7 @@ pipeline {
                 sh '''
                     #!/bin/bash
                     /usr/local/bin/pytest tests/
-                    sh 'docker run -d -p 8080:80 --name my-app-container my-app:${BUILD_NUMBER}'
+                    docker run -d -p 8080:80 --name my-app-container my-app:${BUILD_NUMBER}
                 '''  // Replace with your test command
             }
         }
