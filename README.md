@@ -100,6 +100,10 @@ Creating a basic deployment pipeline involves configuring tools like Git, Jenkin
    Expected output:
    srw-rw---- 1 root docker 0 <timestamp> /var/run/docker.sock
 
+## Output:
+Application on port 9090
+
+![Screenshot 2024-11-17 201409](https://github.com/user-attachments/assets/0a45aa47-58f4-4ee9-8c80-8b7b70f98fb5)
 
 Notes:
   1. Use Uubunu server with 22.04-amd64-server, storage required is 25 GiB
